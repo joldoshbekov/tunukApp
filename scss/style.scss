@@ -1,0 +1,212 @@
+@import "config";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.white {
+  color: $white;
+}
+
+body {
+  font-size: 16px;
+}
+
+.main-container {
+  min-width: 360px;
+  max-width: 100%;
+  flex-grow: 1;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  height: 70px;
+  padding: 20px;
+
+  &_menu > .fa-bars {
+    color: #fff;
+    font-size: 2rem;
+  }
+}
+
+// swiper
+
+.swiper {
+  width: 100%;
+  height: 200px;
+}
+
+.swiper-slide {
+  text-align: left;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.primary-bg {
+  background-color: $slidebg;
+}
+.secondary-bg {
+  background-color: $secondary-bg;
+}
+
+.swiper-slider-text {
+  width: 150px;
+}
+
+.swiper-slider-text > h3 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: -0.24px;
+}
+
+.second_slider {
+  background-image: url(../img/slider2.png);
+}
+
+.third-slider {
+  background-image: url(../img/slider3.png);
+  background-size: cover;
+}
+
+.swiper-pagination-bullet {
+  width: 9px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.9);
+}
+// end swipre
+
+// menu
+
+.slider {
+  position: relative;
+  &-header {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    .fa-search {
+      font-size: 1.2rem;
+      color: $title-color;
+    }
+  }
+
+  &-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    i {
+      font-size: 2rem;
+      color: $title-color;
+    }
+    &-burger {
+      margin-top: -34px;
+      background-color: transparent;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    overflow-x: auto;
+    overflow-x: none;
+    max-width: 85%;
+    height: 70px;
+    scrollbar-width: none;
+    &-item {
+      margin-top: 15px;
+      margin-right: 20px;
+      height: 70px;
+      a {
+        text-align: center;
+        padding: 15px 20px;
+        background: #f4f6fc;
+        border-radius: 15px;
+        text-decoration: none;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 17px;
+        color: $title-color;
+        white-space: nowrap;
+      }
+    }
+    &-item:last-child {
+      margin-right: 0;
+    }
+  }
+  &-buttons::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+}
+
+// end menu
+
+// food
+.foods {
+  &-items {
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &-text {
+        flex-grow: 1;
+        h3 {
+          font-weight: 600;
+          line-height: 19px;
+          color: $title-color;
+          margin-top: 15px;
+          margin-bottom: 10px;
+        }
+        p {
+          margin-bottom: 10px;
+        }
+
+        &-decription {
+          font-size: 0.8rem;
+          line-height: 14px;
+          color: #828282;
+        }
+        &-price {
+          font-weight: 600;
+          font-size: 0.9rem;
+          line-height: 17px;
+          color: $title-color;
+        }
+        &-id {
+          color: $food-id-color;
+        }
+      }
+      hr {
+        background: #c4c4c4;
+        opacity: 0.9;
+        height: 1px;
+      }
+    }
+  }
+}
+
+// end food
