@@ -43,7 +43,7 @@ body {
 
 .swiper {
   width: 100%;
-  height: 200px;
+  height: 30vh;
 }
 
 .swiper-slide {
@@ -136,6 +136,7 @@ body {
     max-width: 85%;
     height: 70px;
     scrollbar-width: none;
+    overflow-y: hidden;
     &-item {
       margin-top: 15px;
       margin-right: 20px;
