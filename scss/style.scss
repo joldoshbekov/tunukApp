@@ -169,6 +169,9 @@ body {
 // food
 .foods {
   &-items {
+    a {
+      text-decoration: none;
+    }
     &-content {
       display: flex;
       justify-content: space-between;
@@ -211,3 +214,72 @@ body {
 }
 
 // end food
+
+// detail
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+
+  &-content {
+    position: relative;
+    &-img > img {
+      border-radius: 0px 0px 30px 30px;
+      max-width: 100%;
+      object-fit: cover;
+      height: 400px;
+    }
+    &-buttons {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+
+      a {
+        width: 40px;
+      }
+      .fas {
+        color: #fff;
+        font-size: 1.5rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 40px;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.detail-container {
+  width: 360px;
+  margin: 0 auto;
+  h3 {
+    font-weight: 600;
+    line-height: 19px;
+    color: $title-color;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-top: 20px;
+  }
+}
+
+// end detail
