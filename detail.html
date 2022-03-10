@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/style.min.css" />
     <title>Food Detail</title>
   </head>
-  <body>
+  <body class="detail-body">
     <header class="header">
       <div class="header-wrapper">
         <div class="header-content">
@@ -42,7 +42,12 @@
     <footer class="detail-footer">
       <div class="detail-container">
         <div class="detail-footer-counter"></div>
-        <div class="detail-footer-add"></div>
+        <div class="detail-footer-add">
+          <div class="detail-addcart">
+            <input type="number" class="detail-count" value="1" />
+            <button id="add-to-cart">Добавить</button>
+          </div>
+        </div>
       </div>
     </footer>
     <script src="app/detail.js"></script>

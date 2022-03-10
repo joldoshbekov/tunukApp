@@ -1,3 +1,11 @@
+"user strict";
+
+const header = document.querySelector("header");
+const sections = document.querySelectorAll("section");
+const searchButton = document.querySelector(".fa-search");
+const searchBlock = document.querySelector(".search-block");
+const closeSearchBlock = document.querySelector(".fa-times");
+let productAddedToCart = 0;
 // swiper slider
 let data = "";
 const slider = new Swiper(".swiper", {
@@ -18,7 +26,7 @@ const swiper = new Swiper(".category-menu-container", {
 // get food produts
 
 const getFoodProduct = async () => {
-  const url = "http://localhost:3000/foods";
+  const url = "http://localhost:3000/foods/";
   const request = await fetch(url);
   data = await request.json();
   showFoods();
@@ -27,7 +35,6 @@ const getFoodProduct = async () => {
 const showFoods = () => {
   const printPost = document.querySelector(".foods-items");
   data.forEach((element) => {
-    console.log(element);
     printPost.insertAdjacentHTML(
       "afterbegin",
       `<a href="detail.html?id=${element.id}">
@@ -43,6 +50,13 @@ const showFoods = () => {
               <p class="foods-items-content-text-id">id: ${element.id}</p>
             </div>
             <div class="foods-items-content-img">
+              ${
+                localStorage.getItem("productId") == element.id &&
+                localStorage.getItem("productCount")
+                  ? "<span>" + localStorage.getItem("productCount") + "</span>"
+                  : " "
+              }
+              </span>
               <img src="${element.foodImg}" alt="" />
             </div>
           </div>
@@ -53,4 +67,23 @@ const showFoods = () => {
   });
 };
 
+// search
+const showSearchBlock = function () {
+  header.classList.add("hidden");
+  for (let prop of sections) {
+    prop.classList.add("hidden");
+  }
+  searchBlock.classList.remove("hidden");
+};
+
+const hideSearchBlock = function () {
+  header.classList.remove("hidden");
+  for (let prop of sections) {
+    prop.classList.remove("hidden");
+  }
+  searchBlock.classList.add("hidden");
+};
+
+searchButton.addEventListener("click", showSearchBlock);
+closeSearchBlock.addEventListener("click", hideSearchBlock);
 window.addEventListener("DOMContentLoaded", getFoodProduct);
